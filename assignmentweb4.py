@@ -14,7 +14,7 @@ import sys
 import select
 import keyboard
 
-from flask import Flask, render_template
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -763,12 +763,13 @@ def check_mode(mode):
 
 @app.route('/') #call the function below when the app starts
 def hello():
-    name = 'World'
-    return render_template('index.html', name=name)
+    #name = 'World'
+    #return render_template('index.html', name=name)
+    return "HI HI !!"
 
 if __name__ == "__main__": # start program at the main function 
    
-   app.run(debug=True)
+   app.run()
 
    parser = argparse.ArgumentParser(description="Run the Quiz program or view results from the command line")
    parser.add_argument("--mode", help="Specify the programs mode (quiz or results)", required=True, type=check_mode)
