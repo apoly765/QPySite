@@ -12,10 +12,7 @@ import argparse
 import getpass
 import sys
 import select
-#if sys.platform.startswith('linux'):
-    #import fcntl # used for the ability the interupt the quiz with the stop watch
-if sys.platform.startswith('win'):
-    import keyboard # used for the ability the interupt the quiz with the stop watch
+import keyboard
 
 from flask import Flask, render_template
 
@@ -767,7 +764,7 @@ def check_mode(mode):
 @app.route('/') #call the function below when the app starts
 def hello():
     name = 'World'
-    return render_template('/index.html', name=name)
+    return render_template('index.html', name=name)
 
 if __name__ == "__main__": # start program at the main function 
    
